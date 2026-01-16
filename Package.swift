@@ -5,19 +5,20 @@ import PackageDescription
 
 let package = Package(
     name: "Favorite",
+    platforms: [.iOS(.v15)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "Favorite",
-            targets: ["Favorite"]
-        ),
+        .library(name: "Favorite", targets: ["Favorite"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/adedwi1808/game-catalogue-Core-package.git", from: "1.0.0"),
+        .package(url: "https://github.com/adedwi1808/game-catalogue-Common-package.git", from: "1.0.0"),
+        .package(url: "https://github.com/adedwi1808/game-catalogue-Components-package.git", from: "1.0.0"),
+        .package(url: "https://github.com/adedwi1808/game-catalogue-GameDetail-package.git", from: "1.0.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Favorite"
+            name: "Favorite",
+            dependencies: ["Core", "Common", "Components", "GameDetail"]
         ),
-
     ]
 )
