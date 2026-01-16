@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "Favorite", targets: ["Favorite"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/adedwi1808/game-catalogue-Core-package.git", from: "1.0.3"),
+        .package(url: "https://github.com/adedwi1808/game-catalogue-Core-package.git", from: "1.0.5"),
         .package(url: "https://github.com/adedwi1808/game-catalogue-Common-package.git", from: "1.0.3"),
         .package(url: "https://github.com/adedwi1808/game-catalogue-Components-package.git", from: "1.0.3"),
         .package(url: "https://github.com/adedwi1808/game-catalogue-GameDetail-package.git", from: "1.0.3"),
