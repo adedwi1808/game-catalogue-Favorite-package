@@ -10,15 +10,20 @@ let package = Package(
         .library(name: "Favorite", targets: ["Favorite"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/adedwi1808/game-catalogue-Core-package.git", from: "1.0.2"),
-        .package(url: "https://github.com/adedwi1808/game-catalogue-Common-package.git", from: "1.0.2"),
-        .package(url: "https://github.com/adedwi1808/game-catalogue-Components-package.git", from: "1.0.2"),
-        .package(url: "https://github.com/adedwi1808/game-catalogue-GameDetail-package.git", from: "1.0.2"),
+        .package(url: "https://github.com/adedwi1808/game-catalogue-Core-package.git", from: "1.0.3"),
+        .package(url: "https://github.com/adedwi1808/game-catalogue-Common-package.git", from: "1.0.3"),
+        .package(url: "https://github.com/adedwi1808/game-catalogue-Components-package.git", from: "1.0.3"),
+        .package(url: "https://github.com/adedwi1808/game-catalogue-GameDetail-package.git", from: "1.0.3"),
     ],
     targets: [
         .target(
             name: "Favorite",
-            dependencies: ["Core", "Common", "Components", "GameDetail"]
+            dependencies: [
+                .product(name: "Core", package: "game-catalogue-Core-package"),
+                .product(name: "Common", package: "game-catalogue-Common-package"),
+                .product(name: "Components", package: "game-catalogue-Components-package"),
+                .product(name: "GameDetail", package: "game-catalogue-GameDetail-package")
+            ]
         ),
     ]
 )
